@@ -44,7 +44,7 @@
         <button class="key-button" value="Save" onclick="saveEventKey()">Save</button>
       </div>
 
-      <!-- Tab Cloaker Section (old one) -->
+      <!-- Tab Cloaker Section -->
       <div class="settings-card">
         <h3>Tab Cloaker</h3>
         <p>Change the title and icon of the page.</p>
@@ -219,7 +219,7 @@
     gtag("js", new Date());
     gtag("config", "G-WKJQ5QHQTJ");
 
-    // ========== CUSTOM CLOAKER (New Section) ==========
+    // ========== CUSTOM CLOAKER (NEW SECTION) ==========
     function saveCustomCloak() {
       const title = document.getElementById('customTitle').value || "Custom Cloaked Site";
       const icon = document.getElementById('customIcon').value || "https://your-domain.com/favicon.png";
@@ -230,15 +230,42 @@
       link.href = icon;
       document.head.appendChild(link);
 
-      console.log('%c✅ Custom Cloak Saved', 'color:#00ff9d; font-weight:bold');
+      // Save to localStorage so it persists on reload
+      localStorage.setItem('customTitle', title);
+      localStorage.setItem('customIcon', icon);
+
+      console.log('%c✅ Custom Cloak Saved & Auto-Applied', 'color:#00ff9d; font-weight:bold');
     }
 
     function resetCustomCloak() {
       document.title = "Home";
       const link = document.querySelector('link[rel="shortcut icon"]');
       if (link) link.href = "favicon.png";
+
+      localStorage.removeItem('customTitle');
+      localStorage.removeItem('customIcon');
+
       console.log('%c✅ Custom Cloak Reset', 'color:#00ff9d; font-weight:bold');
     }
+
+    // Auto-load saved custom cloak when page loads
+    window.onload = () => {
+      const savedTitle = localStorage.getItem('customTitle');
+      const savedIcon = localStorage.getItem('customIcon');
+
+      if (savedTitle) {
+        document.title = savedTitle;
+        document.getElementById('customTitle').value = savedTitle;
+      }
+
+      if (savedIcon) {
+        const link = document.querySelector('link[rel="shortcut icon"]') || document.createElement('link');
+        link.rel = 'shortcut icon';
+        link.href = savedIcon;
+        document.head.appendChild(link);
+        document.getElementById('customIcon').value = savedIcon;
+      }
+    };
   </script>
   <!-- DO NOT REMOVE-->
 </body>
