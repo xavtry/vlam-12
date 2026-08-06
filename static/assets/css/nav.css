@@ -23,7 +23,7 @@ img {
   display: inline;
 }
 
-/* ====================== TOGGLE SIDEBAR (FADE IN/OUT) ====================== */
+/* ====================== HOVER ICON SIDEBAR ====================== */
 .f-nav {
   position: fixed;
   top: 15px;
@@ -34,19 +34,25 @@ img {
   box-sizing: border-box;
   padding: 30px 15px;
   background-color: var(--background-nav);
-  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: var(--backdrop-filter);
-  backdrop-filter: var(--backdrop-filter);
-  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7), inset 0 0 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  transition: 0.35s ease;
-  opacity: 1;
-  pointer-events: auto;
+  transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0; /* hidden by default */
+  pointer-events: none; /* only visible on hover */
   overflow: hidden;
 }
 
+.f-nav:hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Icon (always visible) */
 .f-nav .icon {
   position: relative;
   top: auto;
@@ -54,7 +60,7 @@ img {
   display: block;
   width: 100%;
   height: auto;
-  margin: 0 0 35px 0;
+  margin: 0 0 38px 0;
   text-align: center;
   text-transform: uppercase;
   font-size: 42px;
@@ -62,30 +68,26 @@ img {
   cursor: pointer;
   color: var(--text-primary);
   font-weight: 600;
-  font-style: normal;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .f-nav .icon:hover {
-  transform: scale(1.05);
+  transform: scale(1.08) rotate(3deg);
   font-weight: 800;
+  color: var(--text-primary);
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
 }
 
 .f-nav .icon {
   font-size: 42px;
   color: var(--text-primary);
-  margin: 0 0 35px 0;
+  margin: 0 0 38px 0;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-.f-nav .icon:hover {
-  transform: scale(1.05);
-  font-weight: 800;
-}
-
+/* Right column (text) */
 .f-nav-right {
   position: static;
   display: flex;
@@ -120,8 +122,9 @@ img {
 
 .f-nav-right .navbar-link:hover {
   font-size: inherit;
-  transform: translateX(6px);
-  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(8px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
 }
 
 /* Main content — centered */
@@ -172,29 +175,6 @@ img {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-/* ====================== NEW CLOCK ====================== */
-.main .clock {
-  position: absolute;
-  top: 35px;
-  right: 35px;
-  font-size: 52px;
-  font-weight: 700;
-  color: #ffffff;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  font-family: "Inter", sans-serif;
-  z-index: 10;
-  letter-spacing: 2px;
-}
-
-/* Responsive clock */
-@media (max-width: 768px) {
-  .main .clock {
-    font-size: 42px;
-    top: 25px;
-    right: 25px;
-  }
 }
 
 /* Responsive */
