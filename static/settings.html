@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="referrer" content="no-referrer" />
@@ -16,19 +15,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6840529569014734"
     crossorigin="anonymous"></script>
-
 </head>
-
 <body>
   <div class="f-nav"></div>
   <div class="main">
     <div class="settings-container">
+      <!-- About:Blank Section -->
       <div class="settings-card">
         <h3>About:Blank</h3>
-        <p>
-          Cloak the site in an about:blank page and toggle about:blank on
-          startup (enabled by default)
-        </p>
+        <p>Cloak the site in an about:blank page and toggle about:blank on startup (enabled by default)</p>
         <div id="ab-settings">
           <div id="ab-settings-container">
             <label class="switch">
@@ -39,21 +34,19 @@
           <button onclick="AB()" class="key-button">Open Popup</button>
         </div>
       </div>
+
+      <!-- Set Panic Key Section -->
       <div class="settings-card">
         <h3>Set Panic Key</h3>
-        <p>
-          Quick open another site with one press. Used for redirects when
-          about:blank is opened. For multiple key strokes separate them with a
-          comma. Ex. "A,B,C"
-        </p>
+        <p>Quick open another site with one press. Used for redirects when about:blank is opened. For multiple key strokes separate them with a comma. Ex. "A,B,C"</p>
         <input type="text" id="eventKeyInput" placeholder="Panic Keys (comma separated)" class="key-form" />
         <input class="key-form" placeholder="Panic Link" type="text" id="linkInput" value />
-        <button class="key-button" value="Save" onclick="saveEventKey()">
-          Save
-        </button>
+        <button class="key-button" value="Save" onclick="saveEventKey()">Save</button>
       </div>
+
+      <!-- Tab Cloaker Section (old one) -->
       <div class="settings-card">
-        <h3>&#84;&#97;&#98;&#32;&#67;&#108;&#111;&#97;&#107;&#101;&#114;</h3>
+        <h3>Tab Cloaker</h3>
         <p>Change the title and icon of the page.</p>
         <select id="dropdown" onchange="handleDropdownChange(this)">
           <option value="Classroom">Default</option>
@@ -79,75 +72,59 @@
           <option value="Britannica">Britannica</option>
           <option value="Ducksters">Ducksters</option>
           <option value="Minga">Minga</option>
-          <option value="i-Ready Learning Games">
-            i-Ready Learning Games
-          </option>
+          <option value="i-Ready Learning Games">i-Ready Learning Games</option>
           <option value="NoRedInk Home">NoRedInk Home</option>
           <option value="Newsela Binder">Newsela Binder</option>
           <option value="Newsela Assignments">Newsela Assignments</option>
           <option value="Newsela Home">Newsela Home</option>
           <option value="PowerSchool Sign In">PowerSchool Sign In</option>
-          <option value="PowerSchool Grades and Attendance">
-            PowerSchool Grades and Attendance
-          </option>
-          <option value="PowerSchool Teacher Comments">
-            PowerSchool Teacher Comments
-          </option>
-          <option value="PowerSchool Standards Grades">
-            PowerSchool Standards Grades
-          </option>
-          <option value="PowerSchool Attendance">
-            PowerSchool Attendance
-          </option>
+          <option value="PowerSchool Grades and Attendance">PowerSchool Grades and Attendance</option>
+          <option value="PowerSchool Teacher Comments">PowerSchool Teacher Comments</option>
+          <option value="PowerSchool Standards Grades">PowerSchool Standards Grades</option>
+          <option value="PowerSchool Attendance">PowerSchool Attendance</option>
           <option value="Nearpod">Nearpod</option>
           <option value="StudentVUE">StudentVUE</option>
           <option value="Quizlet Home">Quizlet Home</option>
-          <option value="Google Forms Locked Mode">
-            Google Forms - Locked Mode
-          </option>
+          <option value="Google Forms Locked Mode">Google Forms - Locked Mode</option>
           <option value="DeltaMath">DeltaMath</option>
           <option value="Kami">Kami</option>
-          <option value="GoGuardian Admin Restricted">
-            GoGuardian Admin Block
-          </option>
-          <option value="GoGuardian Teacher Block">
-            GoGuardian Teacher Block
-          </option>
-          <option value="World History Encyclopedia">
-            World History Encyclopedia
-          </option>
+          <option value="GoGuardian Admin Restricted">GoGuardian Admin Block</option>
+          <option value="GoGuardian Teacher Block">GoGuardian Teacher Block</option>
+          <option value="World History Encyclopedia">World History Encyclopedia</option>
           <option value="Big Ideas Math">Big Ideas Math</option>
-          <option value="Big Ideas Math Assignment Player">
-            Big Ideas Math Assignment Player
-          </option>
+          <option value="Big Ideas Math Assignment Player">Big Ideas Math Assignment Player</option>
           <option value="Savvas Realize">Savvas Realize</option>
           <option value="SmartPass">SmartPass</option>
-          <option value="World Book Online - Super Home">
-            World Book Online (Super Home)
-          </option>
-          <option value="World Book Online - Student">
-            World Book Online (Student)
-          </option>
-          <option value="World Book Online - Timelines">
-            World Book Online (Timelines)
-          </option>
+          <option value="World Book Online - Super Home">World Book Online (Super Home)</option>
+          <option value="World Book Online - Student">World Book Online (Student)</option>
+          <option value="World Book Online - Timelines">World Book Online (Timelines)</option>
           <option value="Naviance">Naviance Student</option>
           <option value="PBS Learning Media">PBS Learning Media</option>
-          <option value="PBS Learning Media Student Home">
-            PBS Learning Media Student Home
-          </option>
+          <option value="PBS Learning Media Student Home">PBS Learning Media Student Home</option>
           <option value="Dictionary">Dictionary.com</option>
           <option value="Thesaurus">Thesaurus.com</option>
         </select>
         <div id="buttonLayer">
-          <button class="key-button" value="Save" onclick="CustomIcon(); CustomName(); redirectToMainDomain();">
-            Save
-          </button>
-          <button class="key-button" value="Reset" onclick="ResetCustomCloak(); redirectToMainDomain();">
-            Reset Cloak
-          </button>
+          <button class="key-button" value="Save" onclick="CustomIcon(); CustomName(); redirectToMainDomain();">Save</button>
+          <button class="key-button" value="Reset" onclick="ResetCustomCloak(); redirectToMainDomain();">Reset Cloak</button>
         </div>
       </div>
+
+      <!-- NEW CUSTOM CLOAK SECTION -->
+      <div class="settings-card">
+        <h3>Custom Cloak</h3>
+        <p>Make your own cloak. Type anything you want the tab to say, and put the image URL you want as the favicon.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <input id="customTitle" class="key-form" placeholder="New Title (e.g. Google, Clam, Custom)" style="flex:1">
+          <input id="customIcon" class="key-form" placeholder="Favicon Image URL (e.g. https://...)" style="flex:1">
+          
+          <button class="key-button" onclick="saveCustomCloak()">Save Custom Cloak</button>
+          <button class="key-button" onclick="resetCustomCloak()">Reset Custom Cloak</button>
+        </div>
+      </div>
+
+      <!-- Set Background Image -->
       <div class="settings-card">
         <h3>Set Background Image</h3>
         <p>Change the site's background image.</p>
@@ -155,6 +132,8 @@
         <button class="key-button" id="save-button">Save</button>
         <button class="key-button" id="reset-button">Reset</button>
       </div>
+
+      <!-- Search Engine -->
       <div class="settings-card">
         <h3>Search Engine</h3>
         <p>Change the search engine when searching.</p>
@@ -168,33 +147,30 @@
           <option value="Ecosia">Ecosia</option>
         </select>
         <input class="key-form" type="text" id="engine-form" placeholder="Change Search Engine" name="engine" />
-        <button class="key-button" value="Save" onclick="SaveEngine();">
-          Save
-        </button>
+        <button class="key-button" value="Save" onclick="SaveEngine()">Save</button>
       </div>
+
+      <!-- Proxy -->
       <div class="settings-card">
         <h3>Choose your <an>Pro</an>xy</h3>
-        <p>
-          Ultra<an>vio</an>let is the main <an>pro</an>xy, but Dynamic is
-          faster and supports more sites. (Dynamic is still in beta, so expect
-          some bugs.)
-        </p>
+        <p>Ultra<an>vio</an>let is the main <an>pro</an>xy, but Dynamic is faster and supports more sites. (Dynamic is still in beta, so expect some bugs.)</p>
         <select id="pChange">
           <option value="uv">Ultra<an>vio</an>let (Default)</option>
           <option value="dy">Dynamic (Doesn't work in about:blank)</option>
         </select>
       </div>
+
+      <!-- Particles -->
       <div class="settings-card">
         <h3>Particles</h3>
-        <p>
-          Add the particles that are from the previous version to the new
-          site.
-        </p>
+        <p>Add the particles that are from the previous version to the new site.</p>
         <label class="switch">
           <input type="checkbox" class="slider-checkbox" id="2" />
           <span class="slider-round"></span>
         </label>
       </div>
+
+      <!-- Themes -->
       <div class="settings-card">
         <h3>Themes!</h3>
         <p>Pick from a variety of themes to customize your experience.</p>
@@ -211,30 +187,26 @@
           <option disabled selected>Custom Themes</option>
         </select>
       </div>
+
+      <!-- Save Data -->
       <div class="settings-card">
         <h3>Save Data Management</h3>
-        <p>Export your Interstellar data on this site and import it on another site.
-          This is useful because this site might be blocked in the future,
-          but you don't want to lose your save data.
-        </p>
+        <p>Export your Interstellar data on this site and import it on another site. This is useful because this site might be blocked in the future, but you don't want to lose your save data.</p>
         <p id="warning">Importing a save file will overwrite your current saves!</p>
         <button class="key-button" value="Export" onclick="exportSaveData();">Export Save</button>
         <button class="key-button" value="Import" onclick="importSaveData();">Import Save</button>
       </div>
+
+      <!-- Information -->
       <div class="settings-card">
         <h3>Information</h3>
         <p>Version: v5.2.6</p>
         <p id="last-updated">Last Updated: October 2nd, 2024</p>
-        <p>
-          Questions? Join our
-          <a href="https://discord.gg/interstellar">Discord community</a>,
-          email us at
-          <a href="mailto:hello@gointerstellar.app">hello@gointerstellar.app</a>, or
-          <a href="https://docs.gointerstellar.app/faq">check our FAQ</a>!
-        </p>
+        <p>Questions? Join our <a href="https://discord.gg/interstellar">Discord community</a>, email us at <a href="mailto:hello@gointerstellar.app">hello@gointerstellar.app</a>, or <a href="https://docs.gointerstellar.app/faq">check our FAQ</a>!</p>
       </div>
     </div>
   </div>
+
   <script src="/assets/js/m1.js"></script>
   <script src="/assets/js/s1.js"></script>
   <!-- DO NOT REMOVE-->
@@ -245,10 +217,29 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-WKJQ5QHQTJ");
+
+    // ========== CUSTOM CLOAKER (New Section) ==========
+    function saveCustomCloak() {
+      const title = document.getElementById('customTitle').value || "Custom Cloaked Site";
+      const icon = document.getElementById('customIcon').value || "https://your-domain.com/favicon.png";
+
+      document.title = title;
+      const link = document.querySelector('link[rel="shortcut icon"]') || document.createElement('link');
+      link.rel = 'shortcut icon';
+      link.href = icon;
+      document.head.appendChild(link);
+
+      console.log('%c✅ Custom Cloak Saved', 'color:#00ff9d; font-weight:bold');
+    }
+
+    function resetCustomCloak() {
+      document.title = "Home";
+      const link = document.querySelector('link[rel="shortcut icon"]');
+      if (link) link.href = "favicon.png";
+      console.log('%c✅ Custom Cloak Reset', 'color:#00ff9d; font-weight:bold');
+    }
   </script>
   <!-- DO NOT REMOVE-->
 </body>
-
 </html>
