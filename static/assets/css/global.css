@@ -78,3 +78,14 @@ body {
    position: absolute;
    z-index: 99;
 }
+
+/* ====================== ZOOM OUT EFFECT ====================== */
+body {
+  transform: scale(0.9);
+  transform-origin: top left;
+  margin: 0;
+  padding: 0;
+  width: 111.1111vw;
+  height: 111.1111vh;
+  overflow: hidden;
+}
