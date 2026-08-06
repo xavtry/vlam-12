@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2>Enter Password</h2>
+<input type="password" id="pw" placeholder="Password">
+<button onclick="login()">Continue</button>
+<p id="err" style="color:red;"></p>
+
+<script>
+  const PASSWORD = "ChAnGeMe!@#$%^&*"; // 🔒 change this
+
+  // Already logged in? Go straight to index
+  if (localStorage.getItem("auth") === "true") {
+    window.location.href = "index.html";
+  }
+
+  function login() {
+    const val = document.getElementById("pw").value;
+
+    if (val === PASSWORD) {
+      localStorage.setItem("auth", "true");
+      window.location.href = "index.html";
+    } else {
+      document.getElementById("err").textContent = "Wrong password";
+    }
+  }
+</script>
+
+</body>
+</html>
